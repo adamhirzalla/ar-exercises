@@ -10,3 +10,7 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+print "Enter a store name > "
+name = gets.chomp
+store = Store.create(name: name)
+store.errors.messages.each {|col, message| puts "Error -> #{col} #{message.first}"} unless store.valid?
